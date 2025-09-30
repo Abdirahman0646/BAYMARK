@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Shipment - Baymark Logistics</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Baymark Logistics</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="tracking.html">Tracking</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Track Your Shipment</h1>
+        <p>Enter your tracking number to get real-time updates</p>
+    </section>
+
+    <section class="content-section">
+        <div class="tracking-container">
+            <form onsubmit="handleTracking(event)">
+                <div class="form-group">
+                    <label for="tracking-number">Tracking Number</label>
+                    <input type="text" id="tracking-number" placeholder="e.g., BM123456789" required>
+                </div>
+                <button type="submit" class="cta-button">Track Shipment</button>
+            </form>
+
+            <div id="tracking-result" class="tracking-result">
+                <h3 style="color: #1e3a8a; margin-bottom: 1.5rem;">Shipment Details</h3>
+                <p><strong>Tracking Number:</strong> <span id="result-tracking-number"></span></p>
+                <p><strong>Status:</strong> <span id="result-status"></span></p>
+                <p><strong>Current Location:</strong> <span id="result-location"></span></p>
+                <p><strong>Estimated Delivery:</strong> <span id="result-eta"></span></p>
+                
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid #e2e8f0;">
+                    <h4 style="color: #1e3a8a; margin-bottom: 1rem;">Tracking History</h4>
+                    <p>📍 <strong>Sep 30, 2025 10:00 AM</strong> - In transit to destination</p>
+                    <p>📍 <strong>Sep 29, 2025 3:45 PM</strong> - Departed from Dubai Hub</p>
+                    <p>📍 <strong>Sep 28, 2025 8:30 AM</strong> - Arrived at Dubai Hub</p>
+                    <p>📍 <strong>Sep 27, 2025 2:00 PM</strong> - Shipment picked up</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="tracking.html">Tracking</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p>&copy; 2025 Baymark Logistics. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
