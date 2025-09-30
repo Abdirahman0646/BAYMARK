@@ -11,6 +11,16 @@ body {
 }
 
 /* Navigation */
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+nav .logo {
+  display: flex;
+  align-items: center; /* vertically centers the logo */
+}
+
 nav {
     background: #1e3a8a;
     padding: 1rem 5%;
