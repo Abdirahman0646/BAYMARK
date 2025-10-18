@@ -126,10 +126,11 @@
 
         <h2 style="text-align: center;">Quick Inquiry Form</h2>
         <div class="contact-form">
-            <form>
+            <form name="inquiry" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="inquiry">
                 <div class="form-group">
                     <label for="name">Full Name *</label>
-                    <input type="text" id="name" required>
+                    <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email Address *</label>
