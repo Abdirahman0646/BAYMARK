@@ -123,41 +123,47 @@
                 <p style="color: #64748b; font-size: 0.9rem; margin-top: 1rem;">(Interactive map showing Baymark Logistics office location)</p>
             </div>
         </div>
-
-        <h2 style="text-align: center;">Quick Inquiry Form</h2>
-        <div class="contact-form">
-            <form name="inquiry" method="POST" data-netlify="true">
+<h2 style="text-align: center;">Quick Inquiry Form</h2>
+<div class="contact-form">
+  <form name="inquiry" method="POST" data-netlify="true">
     <input type="hidden" name="form-name" value="inquiry">
-                <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <select id="subject" required>
-                        <option value="">Select a subject</option>
-                        <option value="quote">Request a Quote</option>
-                        <option value="tracking">Tracking Inquiry</option>
-                        <option value="services">Services Information</option>
-                        <option value="complaint">File a Complaint</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" required placeholder="How can we help you?"></textarea>
-                </div>
-                <button type="submit" class="cta-button">Send Message</button>
-            </form>
-        </div>
+
+    <div class="form-group">
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+
+    <div class="form-group">
+      <label for="subject">Subject *</label>
+      <select id="subject" name="subject" required>
+        <option value="">Select a subject</option>
+        <option value="quote">Request a Quote</option>
+        <option value="tracking">Tracking Inquiry</option>
+        <option value="services">Services Information</option>
+        <option value="complaint">File a Complaint</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" required placeholder="How can we help you?"></textarea>
+    </div>
+
+    <button type="submit" class="cta-button">Send Message</button>
+  </form>
+</div>
+
     </section>
 
     <footer>
