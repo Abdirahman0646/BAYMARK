@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b3d91">
     <title>Careers - Baymark Logistics</title>
     <meta name="description" content="Join our team and build your career with a global logistics leader.">
 
@@ -16,8 +17,8 @@
     <!-- Facebook Meta Tags -->
     <meta property="og:title" content="Careers - Baymark Logistics">
     <meta property="og:description" content="Join our team and build your career with a global logistics leader.">
-    <meta property="og:image" content="logo/logobg.webp">
-    <meta property="og:image:alt" content="Careers - Baymark Logistics">
+    <meta property="og:image" content="https://baymark.co.ke/logo/logobg.webp">
+    <meta property="og:image:alt" content="Baymark Logistics - Global Logistics Solutions">
     <meta property="og:site_name" content="Baymark Logistics">
     <meta property="og:locale" content="en_US">
     <meta property="og:image:width" content="1200">
@@ -28,7 +29,8 @@
     <!-- Twitter Meta Tags -->
     <meta name="twitter:title" content="Careers - Baymark Logistics">
     <meta name="twitter:description" content="Join our team and build your career with a global logistics leader.">
-    <meta name="twitter:image" content="logo/logobg.webp">
+    <meta name="twitter:image" content="https://baymark.co.ke/logo/logobg.webp">
+    <meta name="twitter:image:alt" content="Baymark Logistics - Global Logistics Solutions">
     <meta name="twitter:url" content="https://baymark.co.ke/careers.html">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -92,7 +94,6 @@
         </div>
     </nav>
 
-<body>
 <section class="page-header">
     <h1>Join Our Team</h1>
     <p>Build your career with a global logistics leader</p>
@@ -133,23 +134,28 @@
     </div>
 
     <h2 style="margin-top: 3rem;">Apply Now</h2>
+    <p>If you have questions about open roles, <a href="contact.html">reach out to our team</a>.</p>
     <div class="contact-form">
-        <form>
+        <form name="careers-application" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="careers-application">
+            <p style="display:none;">
+                <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+            </p>
             <div class="form-group">
                 <label for="name">Full Name *</label>
-                <input type="text" id="name" required>
+                <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="phone">Phone Number *</label>
-                <input type="tel" id="phone" required>
+                <input type="tel" id="phone" name="phone" required>
             </div>
             <div class="form-group">
                 <label for="position">Position Applied For *</label>
-                <select id="position" required>
+                <select id="position" name="position" required>
                     <option value="">Select a position</option>
                     <option value="logistics-coordinator">Logistics Coordinator</option>
                     <option value="customs-broker">Customs Broker</option>
@@ -159,7 +165,7 @@
             </div>
             <div class="form-group">
                 <label for="cover-letter">Cover Letter</label>
-                <textarea id="cover-letter" placeholder="Tell us why you'd be a great fit..."></textarea>
+                <textarea id="cover-letter" name="cover-letter" placeholder="Tell us why you'd be a great fit..."></textarea>
             </div>
             <button type="submit" class="cta-button">Submit Application</button>
         </form>
@@ -175,9 +181,10 @@
         <a href="careers.html">Careers</a>
         <a href="contact.html">Contact</a>
     </div>
-    <p>&copy; 2025 Baymark Logistics. All rights reserved.</p>
+    <p>&copy; 2026 Baymark Logistics. All rights reserved.</p>
 </footer>
 
 <script src="index.js" defer></script>
 </body>
 </html>
+

@@ -44,15 +44,78 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handler
-function handleFormSubmit(event) {
-    event.preventDefault();
-    alert('Thank you for your inquiry! Our team will contact you within 24 hours.');
-    event.target.reset();
+// Form submission handler (contact + careers)
+function showFormToast(title, message, variant = 'success') {
+    let toast = document.getElementById('form-toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'form-toast';
+        toast.className = 'form-toast';
+        toast.setAttribute('role', 'status');
+        toast.setAttribute('aria-live', 'polite');
+        toast.innerHTML = `
+            <div class="form-toast__icon" aria-hidden="true">✓</div>
+            <div class="form-toast__content">
+                <strong>Thank you!</strong>
+                <span>${message}</span>
+            </div>
+            <button class="form-toast__close" aria-label="Close message">×</button>
+        `;
+        document.body.appendChild(toast);
+
+        toast.querySelector('.form-toast__close').addEventListener('click', () => {
+            toast.classList.remove('show');
+        });
+    }
+
+    toast.classList.remove('error');
+    if (variant === 'error') {
+        toast.classList.add('error');
+    }
+
+    toast.querySelector('.form-toast__icon').textContent = variant === 'error' ? '!' : '✓';
+    toast.querySelector('.form-toast__content strong').textContent = title;
+    toast.querySelector('.form-toast__content span').textContent = message;
+
+    requestAnimationFrame(() => {
+        toast.classList.add('show');
+    });
+
+    clearTimeout(window.__formToastTimer);
+    window.__formToastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 4500);
 }
 
-// Add form submit handlers to all forms
-document.querySelectorAll('form').forEach(form => {
+async function handleFormSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    const body = new URLSearchParams(formData).toString();
+    const action = form.getAttribute('action') || '/';
+
+    try {
+        const response = await fetch(action, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body
+        });
+
+        if (response.ok) {
+            showFormToast('Thank you!', 'Our team will contact you within 24 hours.');
+            form.reset();
+        } else {
+            showFormToast('Submission failed', 'Something went wrong. Please try again.', 'error');
+        }
+    } catch (error) {
+        showFormToast('Submission failed', 'Something went wrong. Please try again.', 'error');
+    }
+}
+
+// Add form submit handlers to contact + careers forms only
+document.querySelectorAll('.contact-form form').forEach(form => {
     form.addEventListener('submit', handleFormSubmit);
 });
 
